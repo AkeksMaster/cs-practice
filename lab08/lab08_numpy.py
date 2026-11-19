@@ -45,3 +45,68 @@ print(temperatures[:2, 1:])
 central = temperatures[:2, 1:3]
 print(central)
 print(central.shape)
+
+# Задание 4
+
+matrix = np.arange(1, 26).reshape(5, 5)
+
+part = matrix[:3, :]
+print(part)
+print(part.shape)
+
+part = matrix[-2:, :]
+print(part)
+print(part.shape)
+
+part = matrix[:, :2]
+print(part)
+print(part.shape)
+
+part = matrix[1:4, 2:5]
+print(part)
+print(part.shape)
+
+part = matrix[-2:, -2:]
+print(part)
+print(part.shape)
+
+
+# Задание 5
+
+vector = np.array([10, 20, 30, 40, 50])
+vector[1:4] = 0
+
+small_matrix = np.arange(1, 10).reshape(3, 3)
+small_matrix[0, :] = -1
+small_matrix[1:, 1:] = 9
+
+# copy() создаёт независимую копию и сохраняет исходный массив.
+changed_hours = hours.copy()
+changed_hours[2:5] = 99
+changed_hours[::2] = -1
+
+print(changed_hours)
+print(hours)
+
+changed_matrix = matrix.copy()
+changed_matrix[1, :] = 0
+changed_matrix[:, -1] = -1
+changed_matrix[1:4, 1:4] = 100
+
+print(changed_matrix)
+print(matrix)
+
+
+# Задание 6
+
+numbers = np.arange(12)
+table = numbers.reshape(3, 4)
+transposed = table.T
+
+print(numbers.shape)
+print(table.shape)
+print(transposed.shape)
+
+# reshape(3, 4) работает, потому что 3 * 4 = 12.
+# reshape(5, 3) вызовет ошибку, потому что 5 * 3 = 15,
+# а исходный массив содержит только 12 элементов.
